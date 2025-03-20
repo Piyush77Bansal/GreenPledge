@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Meio círculo representando o planeta de forma minimalista -->
+  <path d="M250,100 A150,150 0 0,1 400,250 A150,150 0 0,1 250,400" 
+        fill="none" 
+        stroke="#0fb87b" 
+        stroke-width="12" 
+        stroke-linecap="round"/>
+  
+  <!-- Folha principal estilizada -->
+  <path d="M200,180 C215,155 240,150 260,170 C280,190 275,230 255,245 C235,260 205,250 200,225 Z" 
+        fill="#0fb87b"/>
+  
+  <!-- Folha secundária -->
+  <path d="M255,170 C275,150 305,155 315,175 C325,195 315,225 295,235 C275,245 255,230 255,210 Z" 
+        fill="#08a369"/>
+  
+  <!-- Nervuras da folha principal -->
+  <path d="M230,180 C235,195 240,210 245,225 M215,185 C225,200 235,215 245,225" 
+        stroke="#08855a" 
+        stroke-width="2" 
+        stroke-linecap="round"/>
+  
+  <!-- Nervuras da folha secundária -->
+  <path d="M285,175 C285,190 285,205 285,220 M270,175 C275,190 280,205 285,220" 
+        stroke="#08855a" 
+        stroke-width="2" 
+        stroke-linecap="round"/>
+  
+  <!-- Caule estilizado -->
+  <path d="M250,235 C245,250 245,270 250,290 C255,310 265,330 250,350" 
+        stroke="#08855a" 
+        stroke-width="6" 
+        stroke-linecap="round"/>
+  
+  <!-- Elementos de raiz digitais (representando dados e tecnologia) -->
+  <path d="M250,350 L220,380 M250,350 L250,380 M250,350 L280,380" 
+        stroke="#2057a7" 
+        stroke-width="3" 
+        stroke-linecap="round"/>
+  
+  <!-- Pontos representando dados/sensores -->
+  <circle cx="220" cy="380" r="4" fill="#2057a7"/>
+  <circle cx="250" cy="380" r="4" fill="#2057a7"/>
+  <circle cx="280" cy="380" r="4" fill="#2057a7"/>
+  
+  <!-- Texto "PLANET RELEAF" em uma fonte moderna -->
+  <text x="250" y="430" 
+        font-family="Arial, sans-serif" 
+        font-size="36" 
+        font-weight="700" 
+        text-anchor="middle" 
+        fill="#2d2d2d" 
+        letter-spacing="2">PLANET RELEAF</text>
+</svg>
