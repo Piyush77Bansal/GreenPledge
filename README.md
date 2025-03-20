@@ -1,4 +1,12 @@
+[![CI](https://github.com/jorgebaptista/planet-releaf/actions/workflows/main.yml/badge.svg)](https://github.com/jorgebaptista/planet-releaf/actions/workflows/main.yml)
+![Website Deploy](https://deploy-badge.vercel.app/api/?url=https://planet-releaf.vercel.app/)
+[![GitHub issues](https://img.shields.io/github/issues/jorgebaptista/planet-releaf)](https://github.com/jorgebaptista/planet-releaf/issues)
+
+# Planet Releaf
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+Access the vercel deployment: [planet-releaf.vercel.app](https://planet-releaf.vercel.app/)
 
 ## Getting Started
 
