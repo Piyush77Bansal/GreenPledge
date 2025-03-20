@@ -43,3 +43,5 @@ next-env.d.ts
 # old stuff
 .old
 /old/*
+
+.vercel
