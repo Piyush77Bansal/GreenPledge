@@ -1,55 +1,36 @@
 "use client";
-import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
-import axios from "axios";
+import { useState } from "react";
+import { MapContainer, TileLayer, LayersControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "leaflet.heat";
-
-function HeatmapLayer({ points }) {
-    const map = useMap();
-
-    useEffect(() => {
-        if (!points.length || !map) return;
-
-        const L = require("leaflet");
-        const heat = L.heatLayer(points, {
-            radius: 25,
-            blur: 15,
-            maxZoom: 17,
-            minOpacity: 0.5,
-        }).addTo(map);
-
-        return () => {
-            map.removeLayer(heat);
-        };
-    }, [points, map]);
-
-    return null;
-}
 
 export default function MapComponent() {
-    const [points, setPoints] = useState([]);
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-
-        axios.get("/api/deforestation").then((res) => {
-            setPoints(res.data);
-        });
-    }, []);
-
-    if (!mounted) return null;
+    const [showDeforestation, setShowDeforestation] = useState(true);
 
     return (
-        <MapContainer
-            center={[39.5, -8]}
-            zoom={7}
-            scrollWheelZoom={true}
-            className="w-full h-[600px] rounded-lg shadow-lg"
-        >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            {points.length > 0 && <HeatmapLayer points={points} />}
-        </MapContainer>
+        <div className="relative">
+            <button
+                onClick={() => setShowDeforestation(prev => !prev)}
+                className="absolute top-2 right-2 z-[1000] bg-white py-1 px-3 text-sm rounded shadow"
+            >
+                {showDeforestation ? "Hide" : "Show"} Deforestation
+            </button>
+
+            <MapContainer
+                center={[39.5, -8]}
+                zoom={7}
+                scrollWheelZoom
+                className="w-full h-[600px] rounded-lg shadow-lg"
+            >
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; OSM contributors" />
+
+                {showDeforestation && (
+                    <TileLayer
+                        url={`https://tiles.globalforestwatch.org/umd_tree_cover_loss/v1.11/tcd_30/{z}/{x}/{y}.png?x-api-key=${process.env.NEXT_PUBLIC_GFW_API_KEY}`}
+                        opacity={0.4}
+                        attribution="© Global Forest Watch"
+                    />
+                )}
+            </MapContainer>
+        </div>
     );
 }
