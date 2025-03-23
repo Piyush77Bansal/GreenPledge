@@ -1,54 +1,73 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <!-- Meio círculo representando o planeta de forma minimalista -->
-  <path d="M250,100 A150,150 0 0,1 400,250 A150,150 0 0,1 250,400" 
-        fill="none" 
-        stroke="#0fb87b" 
-        stroke-width="12" 
-        stroke-linecap="round"/>
-  
-  <!-- Folha principal estilizada -->
-  <path d="M200,180 C215,155 240,150 260,170 C280,190 275,230 255,245 C235,260 205,250 200,225 Z" 
-        fill="#0fb87b"/>
-  
-  <!-- Folha secundária -->
-  <path d="M255,170 C275,150 305,155 315,175 C325,195 315,225 295,235 C275,245 255,230 255,210 Z" 
-        fill="#08a369"/>
-  
-  <!-- Nervuras da folha principal -->
-  <path d="M230,180 C235,195 240,210 245,225 M215,185 C225,200 235,215 245,225" 
-        stroke="#08855a" 
-        stroke-width="2" 
-        stroke-linecap="round"/>
-  
-  <!-- Nervuras da folha secundária -->
-  <path d="M285,175 C285,190 285,205 285,220 M270,175 C275,190 280,205 285,220" 
-        stroke="#08855a" 
-        stroke-width="2" 
-        stroke-linecap="round"/>
-  
-  <!-- Caule estilizado -->
-  <path d="M250,235 C245,250 245,270 250,290 C255,310 265,330 250,350" 
-        stroke="#08855a" 
-        stroke-width="6" 
-        stroke-linecap="round"/>
-  
-  <!-- Elementos de raiz digitais (representando dados e tecnologia) -->
-  <path d="M250,350 L220,380 M250,350 L250,380 M250,350 L280,380" 
-        stroke="#2057a7" 
-        stroke-width="3" 
-        stroke-linecap="round"/>
-  
-  <!-- Pontos representando dados/sensores -->
-  <circle cx="220" cy="380" r="4" fill="#2057a7"/>
-  <circle cx="250" cy="380" r="4" fill="#2057a7"/>
-  <circle cx="280" cy="380" r="4" fill="#2057a7"/>
-  
-  <!-- Texto "PLANET RELEAF" em uma fonte moderna -->
-  <text x="250" y="430" 
-        font-family="Arial, sans-serif" 
-        font-size="36" 
-        font-weight="700" 
-        text-anchor="middle" 
-        fill="#2d2d2d" 
-        letter-spacing="2">PLANET RELEAF</text>
+    <!-- Fundo abstrato para representar o planeta/espaço -->
+    <defs>
+        <linearGradient id="planetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#05204A" stop-opacity="0.03" />
+            <stop offset="100%" stop-color="#0C5A3E" stop-opacity="0.06" />
+        </linearGradient>
+    </defs>
+
+    <!-- Círculo sutil de fundo -->
+    <circle cx="250" cy="250" r="170" fill="url(#planetGradient)" />
+
+    <!-- Arco orbital inovador -->
+    <path d="M250,100 A150,150 0 0,1 400,250"
+        fill="none"
+        stroke="#0fb87b"
+        stroke-width="4"
+        stroke-linecap="round" />
+
+    <path d="M250,400 A150,150 0 0,1 100,250"
+        fill="none"
+        stroke="#0fb87b"
+        stroke-width="4"
+        stroke-linecap="round" />
+
+    <!-- Folhas geométricas futuristas -->
+    <path d="M250,190 L220,140 L270,120 L290,170 Z" fill="#0ec082" opacity="0.9" />
+    <path d="M250,190 L290,170 L310,210 L270,240 Z" fill="#0caa7c" opacity="0.9" />
+    <path d="M250,190 L270,240 L230,270 L210,220 Z" fill="#09957a" opacity="0.9" />
+    <path d="M250,190 L210,220 L180,190 L220,140 Z" fill="#05806d" opacity="0.9" />
+
+    <!-- Linhas de conexão das folhas (nervuras digitais) -->
+    <path d="M250,190 L270,120 M250,190 L310,210 M250,190 L230,270 M250,190 L180,190"
+        stroke="#14d6a5"
+        stroke-width="1.5"
+        stroke-linecap="round" />
+
+    <!-- Caule futurista -->
+    <path d="M250,190 L250,320"
+        stroke="#09957a"
+        stroke-width="3"
+        stroke-dasharray="1 3"
+        stroke-linecap="round" />
+
+    <!-- Elementos de dados e IA representados como raízes digitais -->
+    <path d="M250,320 L210,350 M250,320 L250,370 M250,320 L290,350"
+        stroke="#3b82f6"
+        stroke-width="2"
+        stroke-linecap="round" />
+
+    <!-- Pontos de dados -->
+    <circle cx="210" cy="350" r="3" fill="#3b82f6" />
+    <circle cx="250" cy="370" r="3" fill="#3b82f6" />
+    <circle cx="290" cy="350" r="3" fill="#3b82f6" />
+    <circle cx="250" cy="190" r="6" fill="#14d6a5" />
+
+    <!-- Efeito de brilho no centro da planta -->
+    <circle cx="250" cy="190" r="10" fill="#14d6a5" opacity="0.3" />
+    <circle cx="250" cy="190" r="15" fill="#14d6a5" opacity="0.1" />
+
+    <!-- Nome do projeto em tipografia futurista -->
+    <text x="250" y="420"
+        font-family="Arial, sans-serif"
+        font-size="32"
+        font-weight="700"
+        text-anchor="middle"
+        fill="#0a3d3d"
+        letter-spacing="4">PLANET RELEAF</text>
+
+    <!-- Sublinhado minimalista -->
+    <line x1="170" y1="430" x2="330" y2="430" stroke="#0fb87b" stroke-width="2"
+        stroke-linecap="round" />
 </svg>
