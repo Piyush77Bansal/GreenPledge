@@ -1,16 +1,14 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const DynamicMapComponent = dynamic(() => import("@/components/MapComponent"), {
-    ssr: false,
-});
+import MapClient from "@/components/MapClient";
 
 export default function MapPage() {
     return (
-        <div className="p-8">
-            <h1 className="text-3xl font-bold mb-4">Deforestation Heatmap</h1>
-            <DynamicMapComponent />
+        <div className="w-full h-screen flex flex-col">
+            <div className="p-4 bg-white shadow">
+                <h1 className="text-2xl font-semibold text-green-700">Portugal Deforestation Map</h1>
+            </div>
+            <div className="flex-grow">
+                <MapClient />
+            </div>
         </div>
     );
 }
