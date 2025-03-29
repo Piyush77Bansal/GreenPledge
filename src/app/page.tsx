@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import StatsSection from "@/components/home/StatsSection";
 import CarbonCreditPackagesSection from "@/components/home/CarbonCreditPackagesSection";
-import CompanyDashboardPreview from "@/components/home/CompanyDashboardPreview";
 import WhyPlanetReLeafSection from "@/components/home/WhyPlanetReLeafSection";
 import InteractiveMapPreviewWrapper from "@/components/home/InteractiveMapPreviewWrapper";
 import PartnerTestimonialsSection from "@/components/home/PartnerTestimonialsSection";
+import FinalCTA from "@/components/home/FinalCTA";
 
 export default function Home() {
   return (
@@ -43,7 +43,7 @@ export default function Home() {
         </h2>
 
         <p className="text-lg text-green-700 mt-3 max-w-md">
-          Reforesting the planet, one tree at a time.
+          A reflorestar o planeta, uma arvore de cada vez.
         </p>
 
         <Link href="/map">
@@ -58,8 +58,8 @@ export default function Home() {
       <WhyPlanetReLeafSection />
       <InteractiveMapPreviewWrapper />
       <PartnerTestimonialsSection />
+      <FinalCTA />
 
-      {/* Optional Footer */}
       <footer className="text-center py-4 text-green-800 text-sm">
         © {new Date().getFullYear()} Planet ReLeaf — All rights reserved.
       </footer>
