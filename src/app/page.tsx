@@ -3,6 +3,9 @@ import Link from "next/link";
 import StatsSection from "@/components/home/StatsSection";
 import CarbonCreditPackagesSection from "@/components/home/CarbonCreditPackagesSection";
 import CompanyDashboardPreview from "@/components/home/CompanyDashboardPreview";
+import WhyPlanetReLeafSection from "@/components/home/WhyPlanetReLeafSection";
+import InteractiveMapPreviewWrapper from "@/components/home/InteractiveMapPreviewWrapper";
+import PartnerTestimonialsSection from "@/components/home/PartnerTestimonialsSection";
 
 export default function Home() {
   return (
@@ -52,7 +55,9 @@ export default function Home() {
 
       <StatsSection />
       <CarbonCreditPackagesSection />
-      <CompanyDashboardPreview />
+      <WhyPlanetReLeafSection />
+      <InteractiveMapPreviewWrapper />
+      <PartnerTestimonialsSection />
 
       {/* Optional Footer */}
       <footer className="text-center py-4 text-green-800 text-sm">
