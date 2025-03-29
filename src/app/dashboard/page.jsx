@@ -19,10 +19,10 @@ export default function CompanyDashboard() {
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                    <StatCard icon={TrendingUp} value="35,2" label="Toneladas de CO₂" />
-                    <StatCard icon={AreaChart} value="12" label="Hectares" />
-                    <StatCard icon={Trees} value="2.450" label="Árvores Plantadas" />
-                    <StatCard icon={Euro} value="€15.000" label="Investimento" />
+                    <StatCard icon={TrendingUp} value={35.2} label="Toneladas de CO₂" />
+                    <StatCard icon={AreaChart} value={12} label="Hectares" />
+                    <StatCard icon={Trees} value={2450} label="Árvores Plantadas" />
+                    <StatCard icon={Euro} value={15000} label="Investimento" />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
