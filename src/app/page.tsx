@@ -43,7 +43,7 @@ export default function Home() {
         </h2>
 
         <p className="text-lg text-green-700 mt-3 max-w-md">
-          A reflorestar o planeta, uma arvore de cada vez.
+          A reflorestar o planeta, uma árvore de cada vez.
         </p>
 
         <Link href="/map">
