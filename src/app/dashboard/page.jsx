@@ -1,6 +1,8 @@
 "use client";
 import { TrendingUp, Trees, AreaChart, Euro, Leaf, Award, Users } from "lucide-react";
 import Link from "next/link";
+import CO2OffsetChart from "@/components/dashboard/CO2OffsetChart";
+import TreeSpeciesChart from "@/components/dashboard/TreeSpeciesChart";
 
 export default function CompanyDashboard() {
     return (
@@ -18,7 +20,6 @@ export default function CompanyDashboard() {
                     </Link>
                 </div>
 
-                {/* High-level ESG Metrics */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     <MetricCard icon={TrendingUp} label="CO₂ Offset" value="35.2 tons" />
                     <MetricCard icon={Trees} label="Trees Planted" value="2,450" />
@@ -26,17 +27,22 @@ export default function CompanyDashboard() {
                     <MetricCard icon={Euro} label="Total Investment" value="€15,000" />
                 </div>
 
-                {/* Additional Metrics (impactful) */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                     <MetricCard icon={Leaf} label="Cost per Ton CO₂" value="€426" />
                     <MetricCard icon={Award} label="ESG Goals Completion" value="72%" />
                     <MetricCard icon={Users} label="Community Impact" value="28 Jobs Supported" />
                 </div>
 
-                {/* Charts placeholders */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <ChartPlaceholder title="Monthly CO₂ Offset vs. Target" />
-                    <ChartPlaceholder title="Forest Health Index (Simulated)" />
+                    <div className="bg-white shadow rounded-lg p-4">
+                        <h3 className="text-center text-green-800 font-semibold mb-4">Monthly CO₂ Offset vs. Target</h3>
+                        <CO2OffsetChart />
+                    </div>
+
+                    <div className="bg-white shadow rounded-lg p-4">
+                        <h3 className="text-center text-green-800 font-semibold mb-4">Tree Species Planted</h3>
+                        <TreeSpeciesChart />
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,14 +57,6 @@ function MetricCard({ icon: Icon, label, value }) {
                 <div className="text-xl font-semibold text-green-800">{value}</div>
                 <div className="text-sm text-gray-500">{label}</div>
             </div>
-        </div>
-    );
-}
-
-function ChartPlaceholder({ title }) {
-    return (
-        <div className="bg-gray-100 rounded-lg h-56 flex items-center justify-center">
-            <span className="text-gray-500 italic">{title}</span>
         </div>
     );
 }
