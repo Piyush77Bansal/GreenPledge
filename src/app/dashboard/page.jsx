@@ -3,6 +3,7 @@ import { TrendingUp, Trees, AreaChart, Euro, Leaf, Award, Users } from "lucide-r
 import Link from "next/link";
 import CO2OffsetChart from "@/components/dashboard/CO2OffsetChart";
 import TreeSpeciesChart from "@/components/dashboard/TreeSpeciesChart";
+import ActivityTimeline from "@/components/dashboard/ActivityTimeline";
 
 export default function CompanyDashboard() {
     return (
@@ -43,6 +44,9 @@ export default function CompanyDashboard() {
                         <h3 className="text-center text-green-800 font-semibold mb-4">Tree Species Planted</h3>
                         <TreeSpeciesChart />
                     </div>
+                </div>
+                <div className="mt-8 bg-white shadow rounded-lg p-6">
+                    <ActivityTimeline />
                 </div>
             </div>
         </div>
