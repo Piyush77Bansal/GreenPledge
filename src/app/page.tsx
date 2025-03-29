@@ -21,9 +21,9 @@ export default function Home() {
           />
           <h1 className="text-2xl font-bold text-green-800">Planet ReLeaf</h1>
         </div>
-        <Link href="/map">
+        <Link href="/login">
           <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
-            Explore Map →
+            Login Empresas →
           </button>
         </Link>
       </nav>
