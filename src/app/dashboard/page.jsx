@@ -8,28 +8,26 @@ export default function CompanyDashboard() {
             <div className="max-w-4xl mx-auto">
                 <div className="flex justify-between items-center mb-8">
                     <div>
-                        <h1 className="text-3xl font-bold text-green-800">GreenCorp Ltd.</h1>
-                        <p className="text-gray-600">Advanced Sustainability Plan</p>
+                        <h1 className="text-3xl font-bold text-green-800">GreenCorp Ltda.</h1>
+                        <p className="text-gray-600">Plano Avançado de Sustentabilidade</p>
                     </div>
                     <Link href="/map">
                         <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded shadow">
-                            Choose Area to Reforest →
+                            Escolher Área para Reflorestar →
                         </button>
                     </Link>
                 </div>
 
-                {/* Stats Cards */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                    <StatCard icon={TrendingUp} value="35.2" label="Tons of CO₂" />
+                    <StatCard icon={TrendingUp} value="35,2" label="Toneladas de CO₂" />
                     <StatCard icon={AreaChart} value="12" label="Hectares" />
-                    <StatCard icon={Trees} value="2,450" label="Trees Planted" />
-                    <StatCard icon={Euro} value="€15,000" label="Investment" />
+                    <StatCard icon={Trees} value="2.450" label="Árvores Plantadas" />
+                    <StatCard icon={Euro} value="€15.000" label="Investimento" />
                 </div>
 
-                {/* Charts placeholders */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <ChartPlaceholder title="CO₂ Offset Evolution (Line Chart)" />
-                    <ChartPlaceholder title="Investment Distribution (Pie Chart)" />
+                    <ChartPlaceholder title="Evolução da Compensação de CO₂ (Gráfico de Linha)" />
+                    <ChartPlaceholder title="Distribuição do Investimento (Gráfico de Pizza)" />
                 </div>
             </div>
         </div>
