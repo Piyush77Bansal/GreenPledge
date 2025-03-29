@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import StatsSection from "@/components/home/StatsSection";
 import CarbonCreditPackagesSection from "@/components/home/CarbonCreditPackagesSection";
+import CompanyDashboardPreview from "@/components/home/CompanyDashboardPreview";
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
 
       <StatsSection />
       <CarbonCreditPackagesSection />
+      <CompanyDashboardPreview />
 
       {/* Optional Footer */}
       <footer className="text-center py-4 text-green-800 text-sm">

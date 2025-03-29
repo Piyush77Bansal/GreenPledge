@@ -42,35 +42,32 @@ export default function CarbonCreditPackages() {
                 {packages.map((pkg, idx) => (
                     <div
                         key={idx}
-                        className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300"
+                        className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col h-full"
                     >
                         <div
                             className="h-40 bg-cover bg-center"
                             style={{ backgroundImage: `url(${pkg.image})` }}
                         />
-                        <div className="p-6 flex flex-col justify-between h-full">
-                            <h3 className="text-xl font-semibold text-green-700 mb-2">
+                        <div className="p-6 flex flex-col justify-between h-full gap-4">
+                            <h3 className="text-xl font-semibold text-green-700">
                                 {pkg.title}
                             </h3>
-                            <p className="text-sm text-gray-600 mb-4">
-                                {pkg.description}
-                            </p>
-                            <div className="text-sm mb-4 text-gray-700">
-                                <div className="flex items-center gap-1 mb-1">
+                            <p className="text-sm text-gray-600">{pkg.description}</p>
+
+                            <div className="text-sm text-gray-700 space-y-1">
+                                <div className="flex items-center gap-1">
                                     <Trees size={16} className="text-green-600" /> {pkg.trees} trees
                                 </div>
-                                <div className="flex items-center gap-1 mb-1">
+                                <div className="flex items-center gap-1">
                                     <Leaf size={16} className="text-green-600" /> {pkg.co2} tons of CO₂
                                 </div>
                                 <div className="flex items-center gap-1">
                                     <MapPin size={16} className="text-green-600" /> {pkg.location}
                                 </div>
                             </div>
-                            <div className="text-lg font-bold text-green-800 mb-4">
-                                {pkg.price}
-                            </div>
-                            <button className="mt-auto w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded">
-                                Buy Credits
+                            <div className="text-lg font-bold text-green-800">{pkg.price}</div>
+                            <button className="w-full bg-green-700 hover:bg-green-800 text-white font-semibold py-2 rounded shadow transition-transform hover:-translate-y-1 duration-300">
+                                🌳 Adquirir Créditos
                             </button>
                         </div>
                     </div>
