@@ -6,7 +6,7 @@ export default function StatsSection() {
             <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
                 <div>
                     <div className="text-3xl sm:text-4xl font-bold">125,764</div>
-                    <div className="text-sm sm:text-base mt-1">Arvores Plantadas</div>
+                    <div className="text-sm sm:text-base mt-1">Árvores Plantadas</div>
                 </div>
                 <div>
                     <div className="text-3xl sm:text-4xl font-bold">5,682</div>
