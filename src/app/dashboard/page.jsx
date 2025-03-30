@@ -14,7 +14,7 @@ export default function CompanyDashboard() {
                         <h1 className="text-3xl font-bold text-green-800">GreenCorp Ltd.</h1>
                         <p className="text-gray-600">Advanced Sustainability Plan</p>
                     </div>
-                    <Link href="/map">
+                    <Link href="/dashboard/map">
                         <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded shadow">
                             Choose Area to Reforest →
                         </button>
