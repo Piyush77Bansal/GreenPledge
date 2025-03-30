@@ -1,11 +1,11 @@
 "use client";
-import { MapContainer, TileLayer, Polygon, Marker, useMap } from "react-leaflet";
-import { useState } from "react";
+import { MapContainer, TileLayer, Polygon, Marker } from "react-leaflet";
+import { useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 const droneIcon = new L.Icon({
-    iconUrl: '/images/drone-icon.svg',
+    iconUrl: '/images/drone-icon.svg', // Ensure you have this file in public/images
     iconSize: [45, 45],
 });
 
@@ -34,11 +34,19 @@ const zones = [
     },
 ];
 
-export default function MapWithZones({ onZoneSelected }) {
+export default function MapWithZones({ onZoneSelected, droneTarget, onDroneAnimationEnd }) {
     const [selectedZone, setSelectedZone] = useState(null);
     const [dronePos, setDronePos] = useState(null);
 
-    const flyDrone = (targetCoords, zone) => {
+    // Trigger drone animation when droneTarget changes
+    useEffect(() => {
+        if (droneTarget) {
+            flyDrone(droneTarget);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [droneTarget]);
+
+    const flyDrone = (targetCoords) => {
         setDronePos(droneLaunchCoords);
         const steps = 100;
         let currentStep = 0;
@@ -54,37 +62,27 @@ export default function MapWithZones({ onZoneSelected }) {
 
             if (currentStep >= steps) {
                 clearInterval(interval);
-                onZoneSelected?.(zone);
+                // Drone animation finished; trigger callback.
+                onDroneAnimationEnd && onDroneAnimationEnd();
             }
         }, 30);
     };
 
-
     const handleZoneClick = (zone) => {
         setSelectedZone(zone);
-        const zoneCenter = [
-            zone.coords.reduce((acc, c) => acc + c[0], 0) / zone.coords.length,
-            zone.coords.reduce((acc, c) => acc + c[1], 0) / zone.coords.length,
-        ];
-        flyDrone(zoneCenter, zone);
+        // Immediately trigger callback to show the impact panel (no drone animation yet)
+        onZoneSelected?.(zone);
     };
-
 
     return (
         <div className="w-full h-[600px] rounded-xl shadow-lg overflow-hidden">
-            <MapContainer
-                center={[39.5, -8]}
-                zoom={7}
-                scrollWheelZoom={true}
-                className="w-full h-full z-0"
-            >
+            <MapContainer center={[39.5, -8]} zoom={7} scrollWheelZoom={true} className="w-full h-full z-0">
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
                 {zones.map((zone) => (
                     <Polygon
                         key={zone.id}
                         pathOptions={{
-                            color: selectedZone === zone.id ? "#2e7d32" : "#4caf50",
+                            color: selectedZone?.id === zone.id ? "#2e7d32" : "#4caf50",
                             fillOpacity: 0.5,
                         }}
                         positions={zone.coords}
@@ -93,7 +91,6 @@ export default function MapWithZones({ onZoneSelected }) {
                         }}
                     />
                 ))}
-
                 {dronePos && <Marker position={dronePos} icon={droneIcon} />}
             </MapContainer>
         </div>
