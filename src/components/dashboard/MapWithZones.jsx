@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 const droneIcon = new L.Icon({
-    iconUrl: '/images/drone-icon.svg', // Ensure you have this file in public/images
+    iconUrl: '/images/drone-icon.svg',
     iconSize: [45, 45],
 });
 
@@ -14,7 +14,7 @@ const droneLaunchCoords = [39.5, -8];
 const zones = [
     {
         id: "zone-1",
-        name: "Alentejo Zone A",
+        name: "Alentejo Zona A",
         coords: [
             [38.5, -8.5],
             [38.6, -8.5],
@@ -24,7 +24,7 @@ const zones = [
     },
     {
         id: "zone-2",
-        name: "Serra da Estrela Zone",
+        name: "Serra da Estrela Zona",
         coords: [
             [40.3, -7.7],
             [40.4, -7.7],

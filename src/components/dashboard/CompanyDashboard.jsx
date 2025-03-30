@@ -39,6 +39,7 @@ export default function CompanyDashboard() {
     }, [missionSuccess]);
 
     return (
+
         <div className="min-h-screen bg-gradient-to-b from-green-50 to-white p-8 relative">
             {showConfetti && <Confetti recycle={false} numberOfPieces={500} />}
             <div className="max-w-6xl mx-auto">
@@ -46,11 +47,11 @@ export default function CompanyDashboard() {
                 <div className="flex justify-between items-center mb-8">
                     <div>
                         <h1 className="text-3xl font-bold text-green-800">GreenCorp Ltd.</h1>
-                        <p className="text-gray-600">Advanced Sustainability Plan</p>
+                        <p className="text-gray-600">Plano de Sustentabilidade Avançado</p>
                     </div>
                     <Link href="/dashboard/map">
                         <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded shadow">
-                            Choose Area to Reforest →
+                            Escolher Área para Reflorestar →
                         </button>
                     </Link>
                 </div>
@@ -60,40 +61,40 @@ export default function CompanyDashboard() {
                     <MetricCard
                         animate={animate}
                         icon={TrendingUp}
-                        label="CO₂ Offset"
+                        label="Compensação de CO₂"
                         value={co2Offset}
                         prevValue={co2Offset - 4.2}
                     />
                     <MetricCard
                         animate={animate}
                         icon={Trees}
-                        label="Trees Planted"
+                        label="Árvores Plantadas"
                         value={treesPlanted}
                         prevValue={treesPlanted - 250}
                     />
-                    <MetricCard icon={AreaChart} label="Hectares Restored" value="12 ha" />
-                    <MetricCard icon={Euro} label="Total Investment" value="€15,000" />
+                    <MetricCard icon={AreaChart} label="Hectares Restaurados" value="12 ha" />
+                    <MetricCard icon={Euro} label="Total Investido" value="€15,000" />
                 </div>
 
                 {/* Additional Metrics */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <MetricCard icon={Leaf} label="Cost per Ton CO₂" value="€426" />
-                    <MetricCard icon={Award} label="ESG Goals Completion" value="72%" />
-                    <MetricCard icon={Users} label="Community Impact" value="28 Jobs Supported" />
+                    <MetricCard icon={Leaf} label="Custo por Tonelada de CO₂" value="€426" />
+                    <MetricCard icon={Award} label="Conclusão de Metas ESG" value="72%" />
+                    <MetricCard icon={Users} label="Impacto na Comunidade" value="28 Empregos Apoiados" />
                 </div>
 
                 {/* Charts Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     <div className="bg-white shadow rounded-lg p-4">
                         <h3 className="text-center text-green-800 font-semibold mb-4">
-                            Monthly CO₂ Offset vs. Target
+                            Compensação Mensal de CO₂ vs. Meta
                         </h3>
                         <CO2OffsetChart />
                     </div>
 
                     <div className="bg-white shadow rounded-lg p-4">
                         <h3 className="text-center text-green-800 font-semibold mb-4">
-                            Tree Species Planted
+                            Espécies de Árvores Plantadas
                         </h3>
                         <TreeSpeciesChart />
                     </div>

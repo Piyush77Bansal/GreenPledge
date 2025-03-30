@@ -42,7 +42,7 @@ export default function MapClientWrapper() {
 
     // Callback when drone animation ends.
     const handleDroneAnimationEnd = () => {
-        toast.success(`🎉 Mission successful in ${selectedZone.name}!`, {
+        toast.success(`🎉 Missão sucedida em ${selectedZone.name}!`, {
             duration: 4000,
             position: "top-center",
             style: {
