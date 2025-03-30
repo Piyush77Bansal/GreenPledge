@@ -46,9 +46,9 @@ export default function Home() {
           A reflorestar o planeta, uma árvore de cada vez.
         </p>
 
-        <Link href="/map">
+        <Link href="/login">
           <button className="mt-8 bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg shadow">
-            Lançar o Mapa Interativo
+            Login de Empresas →
           </button>
         </Link>
       </main>
