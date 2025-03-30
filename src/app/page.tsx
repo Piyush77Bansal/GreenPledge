@@ -48,7 +48,7 @@ export default function Home() {
 
         <Link href="/map">
           <button className="mt-8 bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg shadow">
-            Launch Interactive Map
+            Lançar o Mapa Interativo
           </button>
         </Link>
       </main>

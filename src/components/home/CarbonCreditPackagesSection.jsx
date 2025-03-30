@@ -4,16 +4,16 @@ import { Leaf, Trees, MapPin } from "lucide-react";
 const packages = [
     {
         title: "Sobreiro Package",
-        description: "Cork oaks reforestation in Alentejo—a native species resilient to fires.",
+        description: "Reflorestação de sobreiros no Alentejo—uma espécie nativa resiliente a incêndios.",
         trees: 100,
         co2: 5,
         location: "Alentejo, Portugal",
         price: "€2,500",
-        image: "/images/sobreiro.jpg", // Replace with real images later
+        image: "/images/sobreiro.jpg", // Substituir por imagens reais mais tarde
     },
     {
         title: "Pinheiro Bravo Package",
-        description: "Recovering areas impacted by wildfires in Serra da Estrela.",
+        description: "Recuperação de áreas afetadas por incêndios florestais na Serra da Estrela.",
         trees: 250,
         co2: 10,
         location: "Serra da Estrela",
@@ -22,7 +22,7 @@ const packages = [
     },
     {
         title: "Carvalho Package",
-        description: "Mixed oak and native forest restoration in Trás-os-Montes.",
+        description: "Restauração de florestas mistas de carvalhos e espécies nativas em Trás-os-Montes.",
         trees: 500,
         co2: 25,
         location: "Trás-os-Montes",
@@ -35,7 +35,7 @@ export default function CarbonCreditPackages() {
     return (
         <section className="py-16 px-4 sm:px-8 bg-gradient-to-b from-green-50 to-white">
             <h2 className="text-3xl font-bold text-center text-green-800 mb-10">
-                🌲 Purchase Carbon Credits (Falta Mudar isto)
+                🌲 Comprar Créditos de Carbono
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -56,10 +56,10 @@ export default function CarbonCreditPackages() {
 
                             <div className="text-sm text-gray-700 space-y-1">
                                 <div className="flex items-center gap-1">
-                                    <Trees size={16} className="text-green-600" /> {pkg.trees} trees
+                                    <Trees size={16} className="text-green-600" /> {pkg.trees} árvores
                                 </div>
                                 <div className="flex items-center gap-1">
-                                    <Leaf size={16} className="text-green-600" /> {pkg.co2} tons of CO₂
+                                    <Leaf size={16} className="text-green-600" /> {pkg.co2} toneladas de CO₂
                                 </div>
                                 <div className="flex items-center gap-1">
                                     <MapPin size={16} className="text-green-600" /> {pkg.location}

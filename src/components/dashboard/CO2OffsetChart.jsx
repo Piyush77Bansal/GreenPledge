@@ -3,10 +3,10 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 
 const data = [
     { month: 'Jan', target: 3, actual: 2.5 },
-    { month: 'Feb', target: 3, actual: 3.1 },
+    { month: 'Fev', target: 3, actual: 3.1 },
     { month: 'Mar', target: 3, actual: 2.8 },
-    { month: 'Apr', target: 3, actual: 3.5 },
-    { month: 'May', target: 3, actual: 3.7 },
+    { month: 'Abr', target: 3, actual: 3.5 },
+    { month: 'Mai', target: 3, actual: 3.7 },
     { month: 'Jun', target: 3, actual: 4.0 },
 ];
 

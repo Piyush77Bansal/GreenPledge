@@ -2,9 +2,9 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend, Cell } from 'recharts';
 
 const data = [
-    { species: 'Cork Oak', planted: 1200, avgCO2: 0.08, area: 'Alentejo', color: '#4caf50' },
-    { species: 'Pine', planted: 800, avgCO2: 0.05, area: 'Serra da Estrela', color: '#2e7d32' },
-    { species: 'Oak', planted: 450, avgCO2: 0.07, area: 'Trás-os-Montes', color: '#81c784' },
+    { species: 'Sobreiro', planted: 1200, avgCO2: 0.08, area: 'Alentejo', color: '#4caf50' },
+    { species: 'Pinheiro', planted: 800, avgCO2: 0.05, area: 'Serra da Estrela', color: '#2e7d32' },
+    { species: 'Carvalho', planted: 450, avgCO2: 0.07, area: 'Trás-os-Montes', color: '#81c784' },
 ];
 
 export default function TreeSpeciesChart() {
@@ -20,7 +20,7 @@ export default function TreeSpeciesChart() {
                 />
                 <Legend content={renderLegend} />
 
-                <Bar dataKey="planted" name="Trees planted">
+                <Bar dataKey="planted" name="Árvores Plantadas">
                     {data.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
@@ -53,9 +53,9 @@ function CustomTooltip({ active, payload, label }) {
         return (
             <div className="bg-white border rounded-lg shadow p-3 text-sm text-gray-800">
                 <p className="font-semibold text-green-800 mb-1">{label}</p>
-                <p><strong>Trees Planted:</strong> {data.planted}</p>
-                <p><strong>Total CO₂ Offset:</strong> {totalCO2} tons</p>
-                <p><strong>Location:</strong> {data.area}</p>
+                <p><strong>Árvores Plantadas:</strong> {data.planted}</p>
+                <p><strong>Total CO₂ Compensado:</strong> {totalCO2} toneladas</p>
+                <p><strong>Localização:</strong> {data.area}</p>
             </div>
         );
     }

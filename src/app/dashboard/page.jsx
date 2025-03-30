@@ -4,7 +4,7 @@ import CompanyDashboard from "@/components/dashboard/CompanyDashboard";
 
 export default function DashboardPage() {
     return (
-        <Suspense fallback={<div>Loading Dashboard...</div>}>
+        <Suspense fallback={<div>A carregar Dashboard...</div>}>
             <CompanyDashboard />
         </Suspense>
     );

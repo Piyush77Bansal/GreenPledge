@@ -12,7 +12,7 @@ export default function MapComponent() {
                 onClick={() => setShowDeforestation(prev => !prev)}
                 className="absolute top-2 right-2 z-[1000] bg-white py-1 px-3 text-sm rounded shadow"
             >
-                {showDeforestation ? "Hide" : "Show"} Deforestation
+                {showDeforestation ? "Hide" : "Show"} Deflorestação
             </button>
 
             <MapContainer
