@@ -2,29 +2,30 @@
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
-// Dynamically load MapWithZones
 const MapWithZones = dynamic(() => import("./MapWithZones"), { ssr: false });
 
 export default function MapClientWrapper() {
     const [selectedZone, setSelectedZone] = useState(null);
 
     const handleZoneSelected = (zone) => {
-        console.log("🚁 Zone selected in client:", zone.name);
         setSelectedZone(zone.name);
-
-        // You could also trigger a toast, animation, or redirect here
+        toast.success(`🎉 Mission successful in ${zone.name}!`, {
+            duration: 4000,
+            position: 'top-center',
+            style: {
+                background: '#4caf50',
+                color: '#fff',
+                fontWeight: 'bold',
+            },
+        });
     };
 
     return (
         <div>
             <MapWithZones onZoneSelected={handleZoneSelected} />
-
-            {selectedZone && (
-                <div className="mt-4 text-green-800 font-semibold text-lg text-center">
-                    ✅ Drone mission launched to: <strong>{selectedZone}</strong>
-                </div>
-            )}
+            <Toaster />
         </div>
     );
 }
