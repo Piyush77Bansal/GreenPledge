@@ -31,7 +31,7 @@ const packages = [
     },
 ];
 
-export default function CarbonCreditPackages() {
+export default function CarbonCreditPackages({ id }) {
     return (
         <section className="py-16 px-4 sm:px-8 bg-gradient-to-b from-green-50 to-white">
             <h2 className="text-3xl font-bold text-center text-green-800 mb-10">

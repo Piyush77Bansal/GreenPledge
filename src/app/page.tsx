@@ -53,12 +53,12 @@ export default function Home() {
         </Link>
       </main>
 
-      <StatsSection />
-      <CarbonCreditPackagesSection />
-      <WhyPlanetReLeafSection />
-      <InteractiveMapPreviewWrapper />
-      <PartnerTestimonialsSection />
-      <FinalCTA />
+      <StatsSection id="stats" />
+      <CarbonCreditPackagesSection id="pacotes" />
+      <WhyPlanetReLeafSection id="about" />
+      <InteractiveMapPreviewWrapper id="map-preview" />
+      <FinalCTA id="contacto" />
+
 
       <footer className="text-center py-4 text-green-800 text-sm">
         © {new Date().getFullYear()} Planet ReLeaf — All rights reserved.

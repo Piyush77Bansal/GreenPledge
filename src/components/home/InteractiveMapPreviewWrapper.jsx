@@ -6,6 +6,6 @@ const MapPreview = dynamic(() => import("./MapPreview"), {
     ssr: false,
 });
 
-export default function InteractiveMapPreviewWrapper() {
+export default function InteractiveMapPreviewWrapper({ id }) {
     return <MapPreview />;
 }

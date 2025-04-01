@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-export default function FinalCTA() {
+export default function FinalCTA({ id }) {
     return (
         <section className="py-16 px-4 sm:px-8 bg-green-700 text-white text-center">
             <h2 className="text-3xl font-bold mb-4">Entre em Contacto</h2>
