@@ -1,6 +1,6 @@
 "use client";
 
-export default function StatsSection({ id }) {
+export default function StatsSection() {
     return (
         <section className="w-full bg-green-600 text-white py-12 px-4 sm:px-8">
             <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
