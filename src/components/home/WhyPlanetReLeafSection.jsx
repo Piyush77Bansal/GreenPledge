@@ -1,7 +1,7 @@
 // "use client";
-export default function WhyPlanetReviewSection({ id }) {
+export default function WhyPlanetReviewSection() {
     return (
-        <section id={id} className="py-12 px-4 sm:px-8 bg-white text-center">
+        <section className="py-12 px-4 sm:px-8 bg-white text-center">
             <h2 className="text-3xl font-bold text-green-800 mb-8">
                 Porquê escolher Planet ReLeaf?
             </h2>

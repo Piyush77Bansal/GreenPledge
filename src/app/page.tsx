@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import StatsSection from "@/components/home/StatsSection";
+import AboutSection from "@/components/home/AboutSection";
 import CarbonCreditPackagesSection from "@/components/home/CarbonCreditPackagesSection";
 import WhyPlanetReLeafSection from "@/components/home/WhyPlanetReLeafSection";
 import InteractiveMapPreviewWrapper from "@/components/home/InteractiveMapPreviewWrapper";
@@ -42,9 +43,11 @@ export default function Home() {
       <StatsSection />
       <CarbonCreditPackagesSection id="pacotes" />
       <InteractiveMapPreviewWrapper />
-      <WhyPlanetReLeafSection id="about" />
+      <AboutSection id="about" />
+      <WhyPlanetReLeafSection />
       <PartnerTestimonialsSection />
       <FinalCTA id="contacto" />
+
 
       {/* Footer */}
       <footer className="text-center py-4 text-green-800 text-sm">
