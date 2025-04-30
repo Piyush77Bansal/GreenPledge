@@ -1,5 +1,6 @@
 [![CI](https://github.com/jorgebaptista/planet-releaf/actions/workflows/main.yml/badge.svg)](https://github.com/jorgebaptista/planet-releaf/actions/workflows/main.yml)
 ![Website Deploy](https://deploy-badge.vercel.app/api/?url=https://planet-releaf.vercel.app/&style=for-the-badge&logo=vercel&name=Planet%20ReLeaf)
+[![Open Issues](https://img.shields.io/github/issues/jorgebaptista/planet-releaf?style=for-the-badge)](https://github.com/jorgebaptista/planet-releaf/issues)
 
 # 🌱 Planet Releaf
 
