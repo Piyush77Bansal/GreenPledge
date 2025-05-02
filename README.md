@@ -1,6 +1,11 @@
-[![CI](https://github.com/jorgebaptista/planet-releaf/actions/workflows/main.yml/badge.svg)](https://github.com/jorgebaptista/planet-releaf/actions/workflows/main.yml)
 ![Website Deploy](https://deploy-badge.vercel.app/api/?url=https://planet-releaf.vercel.app/&style=for-the-badge&logo=vercel&name=Planet%20ReLeaf)
 [![Open Issues](https://img.shields.io/github/issues/jorgebaptista/planet-releaf?style=for-the-badge)](https://github.com/jorgebaptista/planet-releaf/issues)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+[![CI](https://github.com/jorgebaptista/planet-releaf/actions/workflows/main.yml/badge.svg)](https://github.com/jorgebaptista/planet-releaf/actions/workflows/main.yml)
+[![Code Style](https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg?style=for-the-badge)](https://prettier.io)
+[![Code Quality](https://img.shields.io/badge/Code%20Quality-ESLint-4B32C3.svg?style=for-the-badge)](https://eslint.org)
+
 
 # 🌱 Planet Releaf
 
