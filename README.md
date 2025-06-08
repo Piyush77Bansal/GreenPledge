@@ -83,7 +83,6 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 Have questions or suggestions? [jorgebaptista.info@gmail.com](mailto:jorgebaptista.info@gmail.com)
 
 > 🚧 Note: This project was made for the Tecstorm hackathon and now serves primarily as a portfolio piece showcasing frontend development skills, thoughtful DevOps integration, and application architecture.
->> 🌱 Let's make the world greener, one drone at a time!
 
 ## 📄 License
 
@@ -92,3 +91,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue to discuss improvements or new features.
+
+> 🌱 Let's make the world greener, one drone at a time!
