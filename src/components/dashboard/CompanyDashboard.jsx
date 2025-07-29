@@ -160,10 +160,7 @@ export default function CompanyDashboard() {
 
                         {/* Activity Timeline */}
                         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-green-100 shadow-lg max-h-[600px] overflow-y-auto">
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-xl font-semibold text-green-800">Recent Activity</h3>
-                                <button className="text-sm text-green-600 hover:text-green-700 font-medium">View All</button>
-                            </div>
+                            
                             <div className="pr-2">
                                 <ActivityTimeline />
                             </div>

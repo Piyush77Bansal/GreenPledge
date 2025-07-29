@@ -11,7 +11,7 @@ export default function SimpleNavBar() {
                 </span>
                 <span className="text-lg font-bold text-green-800">GreenPledge</span>
             </Link>
-            <Link href="/" className="text-green-700 hover:underline font-semibold">Home</Link>
+            <Link href="/" className="text-green-700 hover:text-green-500 font-semibold">Home</Link>
         </nav>
     );
 }
