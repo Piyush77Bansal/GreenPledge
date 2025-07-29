@@ -6,7 +6,7 @@ export default function DashboardPage() {
     return (
         <>
             <SimpleNavBar />
-            <Suspense fallback={<div>A carregar Dashboard...</div>}>
+            <Suspense fallback={<div>Loading Dashboard...</div>}>
                 <CompanyDashboard />
             </Suspense>
         </>

@@ -2,9 +2,9 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend, Cell } from 'recharts';
 
 const data = [
-    { species: 'Sobreiro', planted: 1200, avgCO2: 0.08, area: 'Alentejo', color: '#4caf50' },
-    { species: 'Pinheiro', planted: 800, avgCO2: 0.05, area: 'Serra da Estrela', color: '#2e7d32' },
-    { species: 'Carvalho', planted: 450, avgCO2: 0.07, area: 'Trás-os-Montes', color: '#81c784' },
+    { species: 'Mahogany', planted: 1200, avgCO2: 0.08, area: 'Tamil Nadu', color: '#4caf50' },
+    { species: 'Banyan', planted: 800, avgCO2: 0.05, area: 'Haryana', color: '#2e7d32' },
+    { species: 'Teak', planted: 450, avgCO2: 0.07, area: 'Uttar Pradesh', color: '#81c784' },
 ];
 
 export default function TreeSpeciesChart() {
@@ -19,8 +19,7 @@ export default function TreeSpeciesChart() {
                     content={<CustomTooltip />}
                 />
                 <Legend content={renderLegend} />
-
-                <Bar dataKey="planted" name="Árvores Plantadas">
+                <Bar dataKey="planted" name="Trees Planted">
                     {data.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
@@ -34,13 +33,13 @@ const renderLegend = () => {
     return (
         <ul className="flex gap-4 text-sm text-gray-800 pl-2 mt-2">
             <li className="flex items-center gap-1">
-                <span className="w-3 h-3 bg-[#4caf50] inline-block rounded-sm" /> Cork Oak
+                <span className="w-3 h-3 bg-[#4caf50] inline-block rounded-sm" /> Mahogany
             </li>
             <li className="flex items-center gap-1">
-                <span className="w-3 h-3 bg-[#2e7d32] inline-block rounded-sm" /> Pine
+                <span className="w-3 h-3 bg-[#2e7d32] inline-block rounded-sm" /> Banyan
             </li>
             <li className="flex items-center gap-1">
-                <span className="w-3 h-3 bg-[#81c784] inline-block rounded-sm" /> Oak
+                <span className="w-3 h-3 bg-[#81c784] inline-block rounded-sm" /> Teak
             </li>
         </ul>
     );
@@ -53,9 +52,9 @@ function CustomTooltip({ active, payload, label }) {
         return (
             <div className="bg-white border rounded-lg shadow p-3 text-sm text-gray-800">
                 <p className="font-semibold text-green-800 mb-1">{label}</p>
-                <p><strong>Árvores Plantadas:</strong> {data.planted}</p>
-                <p><strong>Total CO₂ Compensado:</strong> {totalCO2} toneladas</p>
-                <p><strong>Localização:</strong> {data.area}</p>
+                <p><strong>Trees Planted:</strong> {data.planted}</p>
+                <p><strong>Total CO₂ Offset:</strong> {totalCO2} tons</p>
+                <p><strong>Location:</strong> {data.area}</p>
             </div>
         );
     }

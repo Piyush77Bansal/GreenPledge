@@ -6,7 +6,17 @@ import toast, { Toaster } from "react-hot-toast";
 import ZoneImpactPanel from "@/components/dashboard/ZoneImpactPanel";
 
 // Dynamically import MapWithZones without SSR
-const MapWithZones = dynamic(() => import("./MapWithZones"), { ssr: false });
+const MapWithZones = dynamic(
+    () => import("./MapWithZones"),
+    { 
+        ssr: false,
+        loading: () => (
+            <div className="w-full h-[600px] rounded-xl shadow-lg overflow-hidden bg-gray-100 flex items-center justify-center">
+                <div className="text-gray-500">Loading map...</div>
+            </div>
+        )
+    }
+);
 
 export default function MapClientWrapper() {
     const [selectedZone, setSelectedZone] = useState(null);
@@ -22,7 +32,7 @@ export default function MapClientWrapper() {
             hectares: 5,
             trees: 250,
             co2: 4.2,
-            cost: 1250,
+            cost: 100000,
         };
         setSelectedZone(enrichedZone);
         setShowPanel(true);
@@ -30,6 +40,7 @@ export default function MapClientWrapper() {
 
     // When the user confirms in the panel, start the drone animation.
     const handleConfirm = (zone) => {
+        if (!zone?.coords?.length) return;
         // Compute the center of the zone
         const zoneCenter = [
             zone.coords.reduce((acc, c) => acc + c[0], 0) / zone.coords.length,
@@ -42,7 +53,8 @@ export default function MapClientWrapper() {
 
     // Callback when drone animation ends.
     const handleDroneAnimationEnd = () => {
-        toast.success(`🎉 Missão sucedida em ${selectedZone.name}!`, {
+        if (!selectedZone?.name) return;
+        toast.success(`🎉 Mission succeeded in ${selectedZone.name}!`, {
             duration: 4000,
             position: "top-center",
             style: {
@@ -58,7 +70,11 @@ export default function MapClientWrapper() {
 
     return (
         <>
-            <MapWithZones onZoneSelected={handleZoneSelected} droneTarget={droneTarget} onDroneAnimationEnd={handleDroneAnimationEnd} />
+            <MapWithZones
+                onZoneSelected={handleZoneSelected}
+                droneTarget={droneTarget}
+                onDroneAnimationEnd={handleDroneAnimationEnd}
+            />
             <ZoneImpactPanel
                 visible={showPanel}
                 onClose={() => setShowPanel(false)}

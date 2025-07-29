@@ -4,37 +4,41 @@ import { useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-const droneIcon = new L.Icon({
-    iconUrl: '/images/drone-icon.svg',
-    iconSize: [45, 45],
-});
+// Ensure droneIcon is only created on the client side
+let droneIcon;
+if (typeof window !== 'undefined') {
+    droneIcon = new L.Icon({
+        iconUrl: '/images/drone-icon.svg',
+        iconSize: [45, 45],
+    });
+}
 
-const droneLaunchCoords = [39.5, -8];
+const droneLaunchCoords = [20.5937, 78.9629]; // Central India coordinates
 
 const zones = [
     {
         id: "zone-1",
-        name: "Alentejo Zona A",
+        name: "Nagpur Zone",
         coords: [
-            [38.5, -8.5],
-            [38.6, -8.5],
-            [38.6, -8.4],
-            [38.5, -8.4],
+            [21.0800, 78.9000], // Nagpur region coordinates
+            [21.2000, 79.1000],
+            [21.0800, 79.1000],
+            [21.0000, 78.9000],
         ],
     },
     {
         id: "zone-2",
-        name: "Serra da Estrela Zona",
+        name: "Maharashtra Central Zone",
         coords: [
-            [40.3, -7.7],
-            [40.4, -7.7],
-            [40.4, -7.6],
-            [40.3, -7.6],
+            [19.7515, 75.7139], // Maharashtra central region
+            [19.9515, 75.7139],
+            [19.9515, 75.9139],
+            [19.7515, 75.9139],
         ],
     },
 ];
 
-export default function MapWithZones({ onZoneSelected, droneTarget, onDroneAnimationEnd }) {
+function MapWithZones({ onZoneSelected, droneTarget, onDroneAnimationEnd }) {
     const [selectedZone, setSelectedZone] = useState(null);
     const [dronePos, setDronePos] = useState(null);
 
@@ -74,10 +78,14 @@ export default function MapWithZones({ onZoneSelected, droneTarget, onDroneAnima
         onZoneSelected?.(zone);
     };
 
+    if (typeof window === 'undefined') {
+        return null; // Return null during SSR
+    }
+
     return (
         <div className="w-full h-[600px] rounded-xl shadow-lg overflow-hidden">
-            <MapContainer center={[39.5, -8]} zoom={7} scrollWheelZoom={true} className="w-full h-full z-0">
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <MapContainer center={[20.5937, 78.9629]} zoom={7} scrollWheelZoom={true} className="w-full h-full z-0">
+                <TileLayer url="https://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}" />
                 {zones.map((zone) => (
                     <Polygon
                         key={zone.id}
@@ -91,8 +99,10 @@ export default function MapWithZones({ onZoneSelected, droneTarget, onDroneAnima
                         }}
                     />
                 ))}
-                {dronePos && <Marker position={dronePos} icon={droneIcon} />}
+                {dronePos && droneIcon && <Marker position={dronePos} icon={droneIcon} />}
             </MapContainer>
         </div>
     );
 }
+
+export default MapWithZones;

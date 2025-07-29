@@ -33,14 +33,14 @@ export default function ZoneImpactPanel({ visible, onClose, zoneData, onConfirm 
                         <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-1.5 bg-gray-300 rounded-full" />
 
                         <h2 className="text-xl font-bold text-green-800 mb-4">
-                            🌿 Reflorestando {zoneData?.name}
+                            🌿 Reforesting {zoneData?.name}
                         </h2>
 
                         <div className="space-y-3 text-sm text-gray-700">
-                            <StatRow icon={<TreePine />} label="Hectares a Reflorestar" value={`${zoneData?.hectares ?? 5} ha`} />
-                            <StatRow icon={<Leaf />} label="Árvores Estimadas" value={`${zoneData?.trees ?? 250} árvores`} />
-                            <StatRow icon={<TrendingUp />} label="Ganho de CO₂ Compensado" value={`${zoneData?.co2 ?? 4.2} toneladas`} />
-                            <StatRow icon={<Euro />} label="Custo Estimado" value={`€${zoneData?.cost ?? 1250}`} />
+                            <StatRow icon={<TreePine />} label="Hectares to Reforest" value={`${zoneData?.hectares ?? 5} ha`} />
+                            <StatRow icon={<Leaf />} label="Estimated Trees" value={`${zoneData?.trees ?? 250} trees`} />
+                            <StatRow icon={<TrendingUp />} label="Estimated CO₂ Offset" value={`${zoneData?.co2 ?? 4.2} tons`} />
+                            <StatRow icon={<Euro />} label="Estimated Cost" value={`₹${zoneData?.cost ?? 100000}`} />
                         </div>
 
                         <button
@@ -50,7 +50,7 @@ export default function ZoneImpactPanel({ visible, onClose, zoneData, onConfirm 
                                 onClose();
                             }}
                         >
-                            <CheckCircle size={20} /> Lançar Missão de Reflorestação
+                            <CheckCircle size={20} /> Launch Reforestation Mission
                         </button>
                     </motion.div>
                 </motion.div>

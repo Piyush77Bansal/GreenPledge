@@ -2,7 +2,7 @@
 import { MapPin, CalendarCheck, Award } from "lucide-react";
 
 const activities = [
-    { date: "2025-03-01", text: "Reforestation Drone Mission completed in Serra da Estrela (250 trees).", icon: MapPin },
+    { date: "2025-03-01", text: "Reforestation Drone Mission completed in Tamil Nadu (250 trees).", icon: MapPin },
     { date: "2025-02-20", text: "Reached milestone: 30 tons of CO₂ offset!", icon: CalendarCheck },
     { date: "2025-02-10", text: "Earned Gold Sustainability Certification.", icon: Award },
 ];
